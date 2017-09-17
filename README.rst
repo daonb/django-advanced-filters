@@ -218,6 +218,40 @@ The GetFieldChoices view is required to dynamically (using javascript)
 fetch a list of valid field choices when creating/changing an
 ``AdvancedFilter``.
 
+Contributing
+============
+
+We welcome new contributors. Just fork the repository, clone it into your linux
+box, improve it ans end us a pull requests.
+
+To setup the development enviornament, create a virtual enviornment and get the
+depepndencies by:
+
+.. code-block:: shell
+
+    pip install -e .
+    pip install -r test-deps.txt
+    pip install Django==<your preferred version>
+
+(If you're not sure which Django to use go for 'Django<1.11')
+
+The project includes frontend tests using Selenium and Firefox. To enable
+browser automation you'll need to have the 
+`geckodriver <https://github.com/mozilla/geckodriver/releases>`__ somewhere on
+the system path. One you have that install you can run the tests using:
+
+.. code-block:: shell
+
+     python tests/manage.py test
+
+Before opening a pull request please make sure your code adheres to pep8 by 
+running for the project's root:
+
+.. code-block:: shell
+
+    pep8 --exclude=urls.py,migrations,.ropeproject -v advanced_filters
+
+
 TODO
 ====
 
@@ -238,3 +272,4 @@ TODO
    :target: https://travis-ci.org/modlinltd/django-advanced-filters
 .. |Coverage-Develop| image:: https://coveralls.io/repos/modlinltd/django-advanced-filters/badge.svg?branch=develop
    :target: https://coveralls.io/github/modlinltd/django-advanced-filters?branch=develop
+
