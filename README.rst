@@ -39,7 +39,20 @@ Installation & Set up
 2. Add both ``'advanced_filters'`` to ``INSTALLED_APPS``.
 3. Add ``url(r'^advanced_filters/', include('advanced_filters.urls'))``
    to your project's urlconf.
-4. Run ``python manage.py syncdb`` or ``python manage.py migrate`` (for django >= 1.7)
+4. Add ``django.template.context_processors.request`` to 
+   ``TEMLATES['OPTIONS']['context_processors']``:
+
+.. code-block:: python
+
+    TEMPLATES = [
+        {
+            'OPTIONS': {
+                'context_processors': [
+                    '...',
+                    'django.template.context_processors.request',
+    ] } } ]
+
+5. Run ``python manage.py syncdb`` or ``python manage.py migrate`` (for django >= 1.7)
 
 Integration Example
 ===================
