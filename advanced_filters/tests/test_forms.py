@@ -290,7 +290,6 @@ class TestAdminInitialization(CommonFormTest):
             'field': 'first_name', 'negate': False, 'operator': 'iexact',
             'value': 'fez'}))
         self.fdata['form-TOTAL_FORMS'] = 3
-        print(self.fdata)
 
         class RepModelAdmin(admin.ModelAdmin):
             model = self.Rep
@@ -330,7 +329,6 @@ class TestAdminInitialization(CommonFormTest):
         assert isinstance(instance, AdvancedFilter)
         instance.save()
         assert instance.pk is not None
-        print(vars(instance.query))
         assert instance.query.connector == 'OR'
         assert instance.query.children == [
             ['groups__name__iexact', 'bar'],
