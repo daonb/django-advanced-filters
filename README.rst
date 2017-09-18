@@ -222,7 +222,7 @@ Contributing
 ============
 
 We welcome new contributors. Just fork the repository, clone it into your linux
-box, improve it ans end us a pull requests.
+box, improve it and send us a pull requests.
 
 To setup the development enviornament, create a virtual enviornment and get the
 depepndencies by:

@@ -52,7 +52,7 @@ class AdvancedFiltersFrontEndTestCase(StaticLiveServerTestCase):
         button = self.selenium.find_element_by_id('advanced-filter-button')
         button.click()
         self.wait.until(EC.element_to_be_clickable((By.NAME, '_save_goto')))
-        # create the fiter
+        # create the filter
         self.selenium.find_element_by_id('id_title').send_keys('test')
         field = Select(self.selenium.find_element_by_id('id_form-0-field'))
         field.select_by_value("language")
